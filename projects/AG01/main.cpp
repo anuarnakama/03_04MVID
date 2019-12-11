@@ -47,7 +47,7 @@ int main(int, char*[]) {
 
     glfwSetFramebufferSizeCallback(window, onChangeFrameBufferSize);
 
-    glClearColor(0.0f, 0.3f, 0.6f, 1.0f);
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 
     while(!glfwWindowShouldClose(window)) {
         handleInput(window);
