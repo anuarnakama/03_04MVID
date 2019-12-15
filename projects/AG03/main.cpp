@@ -1,9 +1,7 @@
 #include <glad/glad.h>
-
 #include "engine/input.hpp"
 #include "engine/window.hpp"
 #include "engine/shader.hpp"
-
 #include <iostream>
 
 void handleInput() {
@@ -15,6 +13,7 @@ void handleInput() {
 
 uint32_t createVertexData(uint32_t* VBO, uint32_t* EBO) {
     float vertices[] = {
+        // Vertices              //Colores
         0.5f, -0.5f, 0.0f,      1.0f, 0.0f, 0.0f,
         -0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f,
         0.0f, 0.5f, 0.0f,       0.0f, 0.0f, 1.0f

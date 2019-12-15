@@ -14,6 +14,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geo
     loadShader(fragmentPath, &fragmentCode);
     if (geometryPath) {
         loadShader(geometryPath, &geometryCode);
+        
     }
 
     const char* vertexStr = vertexCode.c_str();

@@ -37,6 +37,7 @@ bool checkProgram(uint32_t program) {
     return true;
 }
 
+//Creacion de Shaders
 uint32_t createProgram() {
     const char* vertexShaderSource = "#version 330 core\n"
         "layout (location=0) in vec3 aPos;\n"
@@ -71,19 +72,22 @@ uint32_t createProgram() {
     return program;
 }
 
+//Creación de los vertices (un Quad en este caso, el de las transparencias de clase)
 uint32_t createVertexData(uint32_t* VBO, uint32_t* EBO) {
     float vertices[] = {
-        0.5f, 0.5f, 0.0f,
+        0.75f, 0.75f, 0.0f,
         0.5f, -0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
         -0.5f, 0.5f, 0.0f,
     };
 
+    //indices de relacion de vertices
     uint32_t indices[] = {
         0, 3, 1,
         1, 3, 2
     };
 
+    //Creacion y binding del VAO y VBO
     uint32_t VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, VBO);
@@ -110,6 +114,7 @@ uint32_t createVertexData(uint32_t* VBO, uint32_t* EBO) {
 }
 
 
+//Pintar los elementos
 void render(uint32_t VAO, uint32_t program) {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -127,6 +132,7 @@ int main(int, char*[]) {
     const uint32_t VAO = createVertexData(&VBO, &EBO);
     const uint32_t program = createProgram();
 
+    //Cambiar entre modo frame y fill
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     glEnable(GL_CULL_FACE);
