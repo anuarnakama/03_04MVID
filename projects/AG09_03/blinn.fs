@@ -51,8 +51,6 @@ void main() {
     float spec = pow(max(dot(norm, halfwayDir), 0.0), material.shininess);
     vec3 specular = spec * vec3(texture(material.specular, uv)) * light.specular;
 
-
-
     float theta = dot(lightDir, normalize(-light.direction));
     float epsilon = light.cutOff - light.outerCutOff;
     float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);

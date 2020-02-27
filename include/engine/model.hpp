@@ -18,6 +18,7 @@ public:
   bool gammaCorrection_;
 
   /*  Functions   */
+  Model();
   // constructor, expects a filepath to a 3D model.
   Model(std::string const &path, bool gamma = false);
 

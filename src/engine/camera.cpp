@@ -17,15 +17,20 @@ glm::mat4 Camera::getViewMatrix() const {
     return glm::lookAt(_position, _position + _front, _up);
 }
 
+//Nueva funcion implementada por mi para obtener la direccion de la camara
+glm::vec3 Camera::getCameraDirection() const
+{
+    return _front;
+}
+
 //Nueva funcion implementando un lookAt
 glm::mat4 Camera::getViewMatrix_() const {
 
-    glm::mat4 m1 = glm::mat4(0.0f);
-    glm::mat4 m2 = glm::mat4(0.0f);
+    glm::mat4 m1 = glm::mat4(1.0f);
+    glm::mat4 m2 = glm::mat4(1.0f);
     glm::mat4 myLookAt;
     
-    glm::vec3 cameratarget = glm::vec3(0.0f, 0.0f, 0.0f);
-    glm::vec3 cameraDirection = glm::normalize(_position - cameratarget);
+    glm::vec3 cameraDirection = - _front;
 
     //Matriz 1
     m1[0][0] = _right.x; //columna - fila
@@ -40,20 +45,12 @@ glm::mat4 Camera::getViewMatrix_() const {
     m1[1][2] = cameraDirection.y;
     m1[2][2] = cameraDirection.z;
 
-    m1[3][3] = 1.0f;
-
     //Matriz 2
     m2[3][0] = -_position.x;
     m2[3][1] = -_position.y;
     m2[3][2] = -_position.z;
 
-    m2[0][0] = 1.0f;
-    m2[1][1] = 1.0f;
-    m2[2][2] = 1.0f;
-    m2[3][3] = 1.0f;
-
     myLookAt = m1 * m2;
-    //return glm::lookAt(_position, _position + _front, _up);
     return myLookAt;
 }
 

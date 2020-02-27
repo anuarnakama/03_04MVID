@@ -130,8 +130,8 @@ void render(const Geometry& floor, const Geometry& object, const Geometry& light
     s_phong.set("light.constant", 1.0f);
     s_phong.set("light.linear", 0.2f);
     s_phong.set("light.quadratic", 0.06f);
-    s_phong.set("light.cutOff", glm::cos(glm::radians(40.0f)));
-    s_phong.set("light.outerCutOff", glm::cos(glm::radians(50.0f)));
+    s_phong.set("light.cutOff", glm::cos(glm::radians(30.0f)));
+    s_phong.set("light.outerCutOff", glm::cos(glm::radians(60.0f)));
 
     t_albedo.use(s_phong, "material.diffuse", 0);
     t_specular.use(s_phong, "material.specular", 1);

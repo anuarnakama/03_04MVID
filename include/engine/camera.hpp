@@ -22,6 +22,7 @@ class Camera {
 
         glm::mat4 getViewMatrix() const;
         glm::mat4 getViewMatrix_() const; //añadida por mi
+        glm::vec3 getCameraDirection() const; //añadida por mi
         float getFOV() const;
         glm::vec3 getPosition() const;
 

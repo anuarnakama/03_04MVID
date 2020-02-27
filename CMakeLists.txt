@@ -23,11 +23,16 @@ set(ENGINE_SRC_FILES
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/shader.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/texture.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/window.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/light.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/fbo.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/material.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/drawable.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/cube.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/geometry.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/quad.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/sphere.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/teapot.cpp)
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/geometry/teapot.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/engine/block.cpp)
 
 set(ENGINE_HEADER_FILES
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/camera.hpp
@@ -37,12 +42,17 @@ set(ENGINE_HEADER_FILES
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/shader.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/texture.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/window.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/light.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/fbo.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/material.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/drawable.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/cube.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/geometry.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/quad.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/sphere.hpp
     ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/teapot.hpp
-    ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/teapotdata.hpp)
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/geometry/teapotdata.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/include/engine/block.hpp)
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src/engine/ PREFIX "Source Files" FILES ${ENGINE_SRC_FILES})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/include/engine PREFIX "Header Files" FILES ${ENGINE_HEADER_FILES})

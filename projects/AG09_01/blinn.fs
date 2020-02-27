@@ -30,6 +30,7 @@ void main() {
 
     vec3 norm = normalize(normal);
     vec3 lightDir = normalize(-light.direction);
+    
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse = diff * albedo * light.diffuse;
 
